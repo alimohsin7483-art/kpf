@@ -1,0 +1,60 @@
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 3rem;
+  transition: background 0.4s, border-color 0.4s, padding 0.4s;
+  border-bottom: 1px solid transparent;
+}
+.nav.scrolled {
+  background: rgba(6,6,10,0.96);
+  backdrop-filter: blur(20px);
+  border-color: var(--border);
+  padding: 0.8rem 3rem;
+}
+.logo { display: flex; align-items: center; gap: 0.8rem; }
+.logoImg { border-radius: 50%; object-fit: cover; }
+.logoText {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem; letter-spacing: 0.12em;
+  color: var(--white); display: block; line-height: 1.1;
+}
+.logoSub {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.6rem; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--gold); display: block;
+}
+.links { display: flex; list-style: none; gap: 2rem; }
+.link {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--gray);
+  transition: color 0.2s; position: relative;
+}
+.link::after {
+  content: ''; position: absolute; bottom: -3px; left: 0;
+  width: 0; height: 1px; background: var(--gold); transition: width 0.3s;
+}
+.link:hover { color: var(--gold); }
+.link:hover::after { width: 100%; }
+.burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
+.burger span { display: block; width: 22px; height: 1.5px; background: var(--white); transition: transform 0.3s; }
+.burger span.open:first-child { transform: rotate(45deg) translate(4px, 4px); }
+.burger span.open:last-child { transform: rotate(-45deg) translate(4px, -4px); }
+.mobileMenu { display: none; }
+
+@media (max-width: 1024px) { .links { gap: 1.2rem; } }
+@media (max-width: 768px) {
+  .nav { padding: 1rem 1.5rem; }
+  .links, .nav > a { display: none; }
+  .burger { display: flex; }
+  .mobileMenu {
+    display: flex; flex-direction: column; position: fixed; inset: 0;
+    background: var(--black); align-items: center; justify-content: center;
+    gap: 2rem; z-index: 99;
+  }
+  .mobileLink {
+    font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem;
+    letter-spacing: 0.06em; color: var(--white); transition: color 0.2s;
+  }
+  .mobileLink:hover { color: var(--gold); }
+}

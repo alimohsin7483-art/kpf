@@ -1,0 +1,76 @@
+/* HERO */
+.hero { position: relative; min-height: 100vh; display: flex; align-items: flex-end; padding: 0 3rem 6rem; overflow: hidden; }
+.heroBg { position: absolute; inset: 0; background: linear-gradient(160deg, #0d1a00 0%, #06060A 50%, #1a0d00 100%); }
+.heroGrid { position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px); background-size: 70px 70px; animation: gridPan 18s linear infinite; pointer-events: none; }
+.heroContent { position: relative; z-index: 1; max-width: 900px; }
+.heroTag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.5rem; }
+.heroTag::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
+.heroHeadline { font-family: 'Bebas Neue', sans-serif; font-size: clamp(5rem, 12vw, 12rem); line-height: 0.92; letter-spacing: 0.02em; margin-bottom: 2rem; }
+.heroGold { color: var(--gold); }
+.heroSub { font-size: 1.05rem; color: var(--gray); max-width: 500px; line-height: 1.75; margin-bottom: 2.5rem; }
+.heroActions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.heroMotto { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); opacity: 0.6; }
+.heroBadge { position: absolute; bottom: 6rem; right: 3rem; background: var(--card); border: 1px solid var(--border); padding: 1.5rem 2rem; text-align: center; z-index: 1; }
+.heroBadgeNum { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--gold); display: block; line-height: 1; }
+.heroBadgeLabel { font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); display: block; margin-top: 0.3rem; }
+
+/* MARQUEE */
+.marqueeBar { background: linear-gradient(135deg, var(--gold), var(--gold2)); overflow: hidden; padding: 0.8rem 0; white-space: nowrap; }
+.marqueeInner { display: inline-block; animation: marqueeScroll 20s linear infinite; }
+.marqueeItem { font-family: 'Bebas Neue', sans-serif; font-size: 0.95rem; letter-spacing: 0.12em; color: var(--black); padding: 0 1.5rem; }
+.marqueeDot { opacity: 0.3; }
+
+/* STATS */
+.statsBar { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--border); }
+.stat { padding: 3.5rem 2rem; text-align: center; border-right: 1px solid var(--border); }
+.stat:last-child { border-right: none; }
+.statNum { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 4vw, 4.5rem); color: var(--gold); line-height: 1; display: block; }
+.statLabel { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gray); display: block; margin-top: 0.4rem; }
+
+/* PROGRAMS */
+.section { padding: 7rem 3rem; border-bottom: 1px solid var(--border); }
+.sectionHeader { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3.5rem; flex-wrap: wrap; gap: 1rem; }
+.sectionTitle { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 4vw, 4rem); letter-spacing: 0.04em; }
+.programsGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.programCard { background: var(--card); padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: background 0.3s; cursor: pointer; }
+.programCard:hover { background: var(--card2); }
+.programCard::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), var(--gold2)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+.programCard:hover::before { transform: scaleX(1); }
+.programTop { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
+.programIcon { font-size: 2rem; }
+.programTag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid; padding: 0.3rem 0.7rem; }
+.programTitle { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.06em; margin-bottom: 0.8rem; }
+.programDesc { font-size: 0.85rem; color: var(--gray); line-height: 1.65; margin-bottom: 1.5rem; }
+.programMeta { display: flex; gap: 1rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); flex-wrap: wrap; }
+.programPrice { color: var(--gold) !important; }
+
+/* ABOUT STRIP */
+.aboutStrip { padding: 7rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; border-bottom: 1px solid var(--border); }
+.aboutTitle { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 5vw, 5rem); letter-spacing: 0.04em; line-height: 1.05; }
+.gold { color: var(--gold); }
+.aboutText { font-size: 0.95rem; color: var(--gray); line-height: 1.8; margin-bottom: 2rem; }
+.aboutText strong { color: var(--white); font-weight: 500; }
+
+/* TESTIMONIAL */
+.testimonialSection { padding: 7rem 3rem; text-align: center; border-bottom: 1px solid var(--border); background: var(--dark); }
+.testimonialQuote { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.8rem, 3vw, 3rem); letter-spacing: 0.04em; line-height: 1.2; max-width: 900px; margin: 0 auto; color: var(--white); font-style: normal; }
+.testimonialAuthor { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-top: 2rem; }
+
+/* CTA */
+.ctaSection { padding: 9rem 3rem; text-align: center; position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
+.ctaWatermark { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'Bebas Neue', sans-serif; font-size: 30vw; color: rgba(201,168,76,0.03); pointer-events: none; user-select: none; }
+.ctaTitle { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 7vw, 7rem); letter-spacing: 0.04em; line-height: 1; margin-bottom: 1.5rem; position: relative; }
+.ctaSub { font-size: 1rem; color: var(--gray); max-width: 460px; margin: 0 auto 3rem; line-height: 1.7; position: relative; }
+.ctaActions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
+
+@media (max-width: 900px) {
+  .hero { padding: 0 1.5rem 4rem; }
+  .heroBadge { display: none; }
+  .statsBar { grid-template-columns: repeat(2,1fr); }
+  .stat { border-bottom: 1px solid var(--border); }
+  .section { padding: 5rem 1.5rem; }
+  .programsGrid { grid-template-columns: 1fr; }
+  .aboutStrip { grid-template-columns: 1fr; gap: 2.5rem; padding: 5rem 1.5rem; }
+  .testimonialSection { padding: 5rem 1.5rem; }
+  .ctaSection { padding: 5rem 1.5rem; }
+}
